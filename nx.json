@@ -1,0 +1,71 @@
+{
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "npmScope": "cbl980026",
+  "affected": {
+    "defaultBase": "develop"
+  },
+  "implicitDependencies": {
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
+    ".eslintrc.json": "*"
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "nx/tasks-runners/default",
+      "options": {
+        "cacheableOperations": [
+          "build",
+          "lint",
+          "test",
+          "e2e",
+          "build-storybook"
+        ]
+      }
+    }
+  },
+  "targetDefaults": {
+    "build": {
+      "dependsOn": ["^build"]
+    }
+  },
+  "generators": {
+    "@nrwl/react": {
+      "application": {
+        "babel": true
+      },
+      "component": {
+        "style": "@emotion/styled",
+        "directory": "app/components",
+        "export": false,
+        "pascalCaseFiles": true,
+        "pascalCaseDirectory": true
+      },
+      "hook": {
+        "directory": "app/hooks",
+        "export": false,
+        "pascalCaseFiles": true,
+        "pascalCaseDirectory": true
+      },
+      "redux": {
+        "directory": "store"
+      },
+      "stories": {
+        "generateCypressSpecs": true
+      }
+    },
+    "@nrwl/next": {
+      "application": {
+        "style": "@emotion/styled",
+        "linter": "eslint"
+      },
+      "page": {
+        "style": "@emotion/styled",
+        "export": false,
+        "withTests": true
+      }
+    }
+  },
+  "defaultProject": "blog"
+}
