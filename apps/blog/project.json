@@ -18,16 +18,12 @@
     },
     "serve": {
       "executor": "@nrwl/next:server",
-      "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "blog:build",
-        "dev": true
+        "buildTarget": "blog:build:development",
+        "dev": true,
+        "port": 8000
       },
       "configurations": {
-        "development": {
-          "buildTarget": "blog:build:development",
-          "dev": true
-        },
         "production": {
           "buildTarget": "blog:build:production",
           "dev": false
@@ -45,7 +41,8 @@
       "outputs": ["coverage/apps/blog"],
       "options": {
         "jestConfig": "apps/blog/jest.config.ts",
-        "passWithNoTests": true
+        "passWithNoTests": true,
+        "watch": true
       }
     },
     "lint": {
