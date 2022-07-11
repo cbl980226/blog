@@ -63,7 +63,8 @@
       "page": {
         "style": "@emotion/styled",
         "export": false,
-        "withTests": true
+        "withTests": false,
+        "flat": true
       }
     }
   },
