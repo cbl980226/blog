@@ -1,8 +1,9 @@
-import { AppProps } from 'next/app';
+import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import './styles.css';
 
-import Navbar from '../app/components/Navbar/Navbar';
+import { ThemeProvider } from '@cbl980226/flowbite-react';
+import { BaseLayout } from '../app/features/Layout/BaseLayout';
 
 function CustomApp({ Component, pageProps }: AppProps) {
   return (
@@ -10,14 +11,11 @@ function CustomApp({ Component, pageProps }: AppProps) {
       <Head>
         <title>cbl980226 blog</title>
       </Head>
-      <div className="container mx-auto h-screen flex flex-col flex-nowrap bg-white text-black dark:bg-gray-800 dark:text-white">
-        <header className="px-2">
-          <Navbar></Navbar>
-        </header>
-        <main className="h-full px-2">
+      <ThemeProvider>
+        <BaseLayout>
           <Component {...pageProps} />
-        </main>
-      </div>
+        </BaseLayout>
+      </ThemeProvider>
     </>
   );
 }

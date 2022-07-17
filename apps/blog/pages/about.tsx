@@ -1,18 +1,14 @@
-import styled from '@emotion/styled';
+import type { NextPage } from 'next';
 
-/* eslint-disable-next-line */
-export interface AboutProps {}
+// eslint-disable-next-line
+interface AboutPageProps {}
 
-const StyledAbout = styled.div`
-  color: pink;
-`;
-
-export function About(props: AboutProps) {
+const About: NextPage<AboutPageProps> = (_props) => {
   return (
-    <StyledAbout>
+    <main>
       <h1>Welcome to About!</h1>
-    </StyledAbout>
+    </main>
   );
-}
+};
 
 export default About;

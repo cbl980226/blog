@@ -12,7 +12,9 @@
         "outputPath": "dist/apps/blog"
       },
       "configurations": {
-        "development": {},
+        "development": {
+          "outputPath": "tmp/apps/blog"
+        },
         "production": {}
       }
     },

@@ -1,12 +1,11 @@
-import styled from '@emotion/styled';
+import type { NextPage } from 'next';
+import classNames from 'classnames';
 
-const StyledPage = styled.div`
-  .page {
-  }
-`;
+// eslint-disable-next-line
+interface HomePageProps {}
 
-export function Home() {
-  return <StyledPage>Home</StyledPage>;
-}
+const Home: NextPage<HomePageProps> = (props) => {
+  return <main className="w-full h-full">Home</main>;
+};
 
 export default Home;
