@@ -14,7 +14,9 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@cbl980226/flowbite-react": ["libs/flowbite-react/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
