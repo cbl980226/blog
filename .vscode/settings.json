@@ -1,3 +1,27 @@
 {
-  "typescript.tsdk": "node_modules\\typescript\\lib"
+  "eslint.format.enable": true,
+  "javascript.format.enable": false,
+  "typescript.format.enable": false,
+
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "typescript": "typescriptreact",
+    "vue-html": "html"
+  },
+
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "eslint.packageManager": "yarn",
+  "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact", "vue", "svelte"],
+
+  "movets.relativeToTsconfig": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+
+  "typescript.tsdk": "node_modules\\typescript\\lib",
+
+  "cSpell.words": ["cacheable", "ephox", "flowbite", "fontawesome", "fortawesome", "katamari", "nrwl", "reduxjs", "semibold", "svgr", "tailwindcss"]
 }

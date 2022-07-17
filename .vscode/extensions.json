@@ -2,7 +2,12 @@
   "recommendations": [
     "nrwl.angular-console",
     "esbenp.prettier-vscode",
-    "firsttris.vscode-jest-runner",
-    "dbaeumer.vscode-eslint"
+    "dbaeumer.vscode-eslint",
+    "webben.browserslist",
+    "christian-kohler.npm-intellisense",
+    "bradlc.vscode-tailwindcss",
+    "streetsidesoftware.code-spell-checker",
+    "pmneo.tsimporter",
+    "stringham.move-ts"
   ]
 }
