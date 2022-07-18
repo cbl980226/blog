@@ -29,7 +29,7 @@ export const BaseLayout: FC<LayoutProps> = ({ children }) => {
         <div className="flex items-center md:order-2">
           <Link href="https://github.com/cbl980226">
             <a target="_blank">
-              <FontAwesomeIcon icon={faGithub} className=" text-2xl p-2 ml-3" />
+              <FontAwesomeIcon icon={faGithub} className="text-2xl p-2 sm:ml-3" />
             </a>
           </Link>
           <Navbar.Toggle />
