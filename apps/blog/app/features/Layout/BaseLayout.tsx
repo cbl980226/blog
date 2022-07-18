@@ -13,14 +13,14 @@ export const BaseLayout: FC<LayoutProps> = ({ children }) => {
         <div className="flex items-center">
           <Navbar.Brand>
             <span>CBL</span>
-            <div className="relative ml-6 xl:ml-16">
-              <div className="absolute flex inset-y-0 left-0 items-center pl-3 pointer-events-none">
-                <FontAwesomeIcon icon={faSearch} className="text-base text-gray-500" />
+            <div className="relative ml-2 md:ml-6 xl:ml-16">
+              <div className="absolute flex inset-y-0 left-0 items-center pl-2 pointer-events-none">
+                <FontAwesomeIcon icon={faSearch} className="text-sm sm:text-base text-gray-500" />
               </div>
               <input
                 type="text"
-                id="search-navbar"
-                className="block p-2 pl-10 w-full text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:text-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                id="navbar-search"
+                className="block w-full p-2 pl-7 indent-1 sm:pl-10 text-xs sm:text-base text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="Search..."
               />
             </div>
