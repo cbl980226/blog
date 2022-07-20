@@ -1,4 +1,4 @@
-import type { Theme } from './Theme.interface';
+import type { Theme } from './types';
 import { createContext } from 'react';
 import defaultTheme from '../../theme/default';
 

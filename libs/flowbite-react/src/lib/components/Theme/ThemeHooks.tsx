@@ -10,9 +10,7 @@ export interface ThemeModeActions {
   toggleMode?(): void;
 }
 
-export const useThemeMode = (
-  preference: boolean
-): [ThemeMode, ThemeModeActions] => {
+export const useThemeMode = (preference: boolean): [ThemeMode, ThemeModeActions] => {
   if (!preference) return [undefined, {}];
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const [mode, setMode] = useState<ThemeMode>(undefined);
@@ -30,19 +28,14 @@ export const useThemeMode = (
     }
 
     savePreference(mode);
-    setMode(mode == 'dark' ? 'light' : 'dark');
+    setMode(mode === 'dark' ? 'light' : 'dark');
   };
 
   // eslint-disable-next-line react-hooks/rules-of-hooks
   useEffect(() => {
     if (!preference) return;
-    const matchesDarkPreference =
-      hasWindow &&
-      !!window.matchMedia &&
-      window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const userMode =
-      (localStorage.getItem('theme-mode') as ThemeMode) ||
-      (matchesDarkPreference ? 'dark' : 'light');
+    const matchesDarkPreference = hasWindow && !!window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const userMode = (localStorage.getItem('theme-mode') as ThemeMode) || (matchesDarkPreference ? 'dark' : 'light');
 
     if (userMode) {
       setMode(userMode);

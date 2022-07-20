@@ -1,4 +1,4 @@
-export type { Theme } from './Theme.interface';
+export type { Theme } from './types';
 export type { ThemeContextProps } from './ThemeContext';
 export type { ThemeProviderProps } from './ThemeProvider';
 
