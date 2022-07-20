@@ -1,22 +1,17 @@
-import type { FC, PropsWithChildren } from 'react';
-import type { LinkProps } from 'next/link';
+import type { ComponentProps, FC, PropsWithChildren } from 'react';
 import classNames from 'classnames';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
 import { useTheme } from '../Theme';
 import { useNavbarContext } from './NavbarContext';
 
-export interface NavbarLinkProps extends PropsWithChildren<LinkProps> {
-  href: string;
-  as?: string;
+export interface NavbarLinkProps extends Omit<PropsWithChildren<ComponentProps<'a'>>, 'className'> {
+  href?: string;
+  active?: boolean;
   disabled?: boolean;
 }
 
-export const NavbarLink: FC<NavbarLinkProps> = ({ href, as, disabled, children, ...props }) => {
+export const NavbarLink: FC<NavbarLinkProps> = ({ href, active, disabled, children, ...props }) => {
   const { setIsOpen } = useNavbarContext();
-  const router = useRouter();
   const theme = useTheme().theme.navbar.link;
-  const active = router.pathname === href || router.pathname === as;
   const navbarLinkTheme = classNames(
     theme.base,
     {
@@ -31,11 +26,9 @@ export const NavbarLink: FC<NavbarLinkProps> = ({ href, as, disabled, children, 
   };
 
   return (
-    <Link href={href} scroll={false}>
-      <a className={navbarLinkTheme} aria-disabled={disabled} {...props} onClick={handleClick}>
-        {children}
-      </a>
-    </Link>
+    <a className={navbarLinkTheme} aria-disabled={disabled} {...props} onClick={handleClick}>
+      {children}
+    </a>
   );
 };
 

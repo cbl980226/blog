@@ -1,5 +1,6 @@
 import type { ComponentProps, FC, PropsWithChildren } from 'react';
 import classNames from 'classnames';
+import { Children } from 'react';
 import { useTheme } from '../Theme';
 import { useNavbarContext } from './NavbarContext';
 
@@ -14,7 +15,11 @@ export const NavbarCollapse: FC<NavbarCollapseProps> = ({ children, ...props }) 
 
   return (
     <div className={collapseTheme} {...props}>
-      <ul className={collapseMenuTheme}>{children}</ul>
+      <ul className={collapseMenuTheme}>
+        {Children.map(children, (child, index) => {
+          return <li key={index}>{child}</li>;
+        })}
+      </ul>
     </div>
   );
 };

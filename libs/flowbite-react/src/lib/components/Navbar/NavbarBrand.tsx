@@ -1,31 +1,18 @@
 import type { ComponentProps, FC, PropsWithChildren } from 'react';
-import type { LinkProps } from 'next/link';
 import classNames from 'classnames';
-import Link from 'next/link';
 import { useTheme } from '../Theme';
 
-type Url = LinkProps['href'];
-
-export interface NavbarBrandProps extends Omit<PropsWithChildren<ComponentProps<'a'>>, 'className' | 'href'> {
-  href?: Url;
-}
+// eslint-disable-next-line
+export interface NavbarBrandProps extends Omit<PropsWithChildren<ComponentProps<'a'>>, 'className'> {}
 
 export const NavbarBrand: FC<NavbarBrandProps> = ({ href, children, ...props }) => {
   const theme = useTheme().theme.navbar.brand;
   const navbarBrandTheme = classNames(theme);
 
   return (
-    (href && (
-      <Link href={href}>
-        <a className={navbarBrandTheme} {...props}>
-          {children}
-        </a>
-      </Link>
-    )) || (
-      <span className={navbarBrandTheme} {...props}>
-        {children}
-      </span>
-    )
+    <a href={href} className={navbarBrandTheme} {...props}>
+      {children}
+    </a>
   );
 };
 
