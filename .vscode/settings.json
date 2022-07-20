@@ -23,5 +23,5 @@
 
   "typescript.tsdk": "node_modules\\typescript\\lib",
 
-  "cSpell.words": ["cacheable", "ephox", "flowbite", "fontawesome", "fortawesome", "katamari", "nrwl", "reduxjs", "semibold", "svgr", "tailwindcss"]
+  "cSpell.words": ["cacheable", "ephox", "flowbite", "fontawesome", "fortawesome", "katamari", "nrwl", "pprint", "reduxjs", "semibold", "svgr", "tailwindcss", "unoptimized"]
 }
